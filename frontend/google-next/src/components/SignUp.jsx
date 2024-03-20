@@ -48,7 +48,7 @@ export default function SignInSide() {
         }
       });
       console.log(response.data);
-      navigate('/response', { state: { apiResponse: response.data.generated_text , player_id: player_id} });
+      navigate('/response', { state: { apiResponse: response.data.generated_text , player_id: response.data.player_id} });
     } catch (error) {
       console.error('Error generating summary:', error);
     }

@@ -4,13 +4,15 @@ import seaborn as sns
 from beamngpy import BeamNGpy, Scenario, Vehicle
 from beamngpy.sensors import IMU, Electrics, Damage
 from google.cloud import bigquery
+import json
+import os
 
 
 def game(player_id):
     beamng = BeamNGpy('localhost', 64256, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
     beamng.open()
 
-    scenario = Scenario('automation_test_track', 'Driving Analysis - Miracle Software Systems')
+    scenario = Scenario('automation_test_track', 'Driving Analysis - Ford Motors')
 
     vehicle = Vehicle('test_vehicle', model='covet', license = player_id, color='Green')
     imu_sensor = IMU(pos=(0.73, 0.51, 0.8), debug=True)
@@ -43,35 +45,18 @@ def game(player_id):
 
     for t in range(0, 1800, 30):
         vehicle.sensors.poll()
-        
-    
         row_data = {'Time': t/60}
-        
-   
         for sensor_name, sensor in vehicle.sensors.items():
             filtered_data = {key: value for key, value in sensor.data.items() if key in essential_keys}
             row_data.update({f"{key}": value for key, value in filtered_data.items()})
-        
-    
         if t == 0:
             column_names.extend(sorted(row_data.keys())[1:])  # Exclude 'Time' since it's already added
-        
-
         data.append([row_data[col] for col in column_names])
         beamng.control.step(30)
-
     beamng.close()
-
-
     df = pd.DataFrame(data, columns=column_names)
-
- 
     df.to_csv(f'telematics/{player_id}_vehicle_data.csv', index=False)
-    
     upload_to_bigquery(f'telematics/{player_id}_vehicle_data.csv', player_id)
-    
-
-
     print(df.head())
 
 def upload_to_bigquery(csv_file_path, table_id):

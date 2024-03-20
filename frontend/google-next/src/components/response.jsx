@@ -5,38 +5,41 @@ import './Response.css';
 import MiracleLogo from '../assets/Miracle Logo.svg';
 import gemini from '../assets/gemini.svg';
 import axios from 'axios';
+import SideLogo from '../assets/Group.svg';
 
 const ApiResponsePage = () => {
   const location = useLocation();
   const apiResponse = location.state?.apiResponse;
-
+  const player_id = location.state?.player_id;
+  console.log("dsfoinaosfn",player_id);
 
   const [messages, setMessages] = useState([]);
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const messageText = data.get('name').toString(); // Make sure this matches your input's name attribute
+  event.preventDefault();
+  const messageText = event.target.elements.name.value; // Assuming 'name' is the name of your input field
+
+  const newMessage = { id: Date.now(), text: messageText, type: 'user' };
+  setMessages([...messages, newMessage]);
+
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/chat', {
+  message: messageText,  
+  player_id: player_id  
+}, {
+  headers: {
+    'Content-Type': 'application/json'
+  }
+});
 
 
-    const newMessage = { id: Date.now(), text: messageText, type: 'user' };
-    setMessages([...messages, newMessage]);
 
-    try {
-      const response = await axios.post('http://127.0.0.1:8000/chat', {
-        message: messageText
-      }, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-
-      const apiResponse = { id: Date.now(), text: response.data.response, type: 'api' };
-      setMessages(currentMessages => [...currentMessages, apiResponse]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const apiResponse = { id: Date.now(), text: response.data.response, type: 'api' };
+    setMessages(currentMessages => [...currentMessages, apiResponse]);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   return (
     <div className="apiResponseContainer">
@@ -45,6 +48,7 @@ const ApiResponsePage = () => {
           <img src={MiracleLogo} alt="Miracle Logo" style={{ width: '180px', height: '140px' }} />
         </div>
       </header>
+      
       <div className="contentContainer">
         <div className="markdownContainer">
           {apiResponse ? (
@@ -53,6 +57,8 @@ const ApiResponsePage = () => {
             <p>No response received.</p>
           )}
         </div>
+      
+        
         <div className="chatContainer">
  <div className="messages">
   {messages.map((msg) => (
@@ -67,6 +73,7 @@ const ApiResponsePage = () => {
     <button type="submit">Send</button>
   </form>
 </div>
+
 
       </div>
       <footer className="apiResponseFooter">
