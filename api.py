@@ -31,7 +31,7 @@ class Player(BaseModel):
 class ChatMessage(BaseModel):
     message: str
     player_id: str
-
+    
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -50,10 +50,10 @@ async def generate_summary_endpoint(player: Player) -> Dict:
         
         # Load data
         logging.info(f"Loading CSV file for player_id: {player_id}")
-        data = pd.read_csv(f'telematics/{player_id}_vehicle_data.csv')
+        df = pd.read_csv(f'telematics/{player_id}_vehicle_data.csv')
 
         logging.info("Aggregating statistics")
-        summary = aggregate_statistics(data)
+        summary = aggregate_statistics(df)
 
         # Generate content
         logging.info("Generating content")
@@ -66,8 +66,45 @@ async def generate_summary_endpoint(player: Player) -> Dict:
             },
             stream=False,
         )
+        
+        fuel_data = [{'Time': row['Time'], 'Fuel Level': row['fuel']} for index, row in df.iterrows()]
+        oil_temp_data = [{'Time': row['Time'], 'Oil Temperature': row['oil_temperature']} for index, row in df.iterrows()]
+        water_temp_data = [{'Time': row['Time'], 'Water Temperature': row['water_temperature']} for index, row in df.iterrows()]
+        gear_distribution = df['gear'].value_counts().reset_index().rename(columns={'index': 'Gear', 'gear': 'Frequency'})
+        gear_distribution_data = [{'Gear': row['Gear'], 'Frequency': row['Frequency']} for index, row in gear_distribution.iterrows()]
+        
+        graphs = [
+            {
+                'graph_type': 'line',
+                'title': 'Fuel Level Over Time',
+                'x_axis': 'Time',
+                'y_axis': 'Fuel Level',
+                'data': fuel_data
+            },
+            {
+                'graph_type': 'line',
+                'title': 'Oil Temperature Over Time',
+                'x_axis': 'Time',
+                'y_axis': 'Oil Temperature',
+                'data': oil_temp_data
+            },
+            {
+                'graph_type': 'line',
+                'title': 'Water Temperature Over Time',
+                'x_axis': 'Time',
+                'y_axis': 'Water Temperature',
+                'data': water_temp_data
+            },
+            {
+                'graph_type': 'bar',
+                'title': 'Gear Distribution',
+                'x_axis': 'Gear',
+                'y_axis': 'Frequency',
+                'data': gear_distribution_data
+            }
+        ]
 
-        return {"generated_text": responses.text, "player_id": player_id}
+        return {"generated_text": responses.text, "player_id": player_id, "graphs": graphs}
 
     except Exception as e:
         logging.error(f"Error occurred: {str(e)}")

@@ -6,15 +6,15 @@ from beamngpy.sensors import IMU, Electrics, Damage
 from google.cloud import bigquery
 import json
 import os
+import random
 
+beamng = BeamNGpy('localhost', 64256, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
 
 def game(player_id):
-    beamng = BeamNGpy('localhost', 64256, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
+    
     beamng.open()
-
     scenario = Scenario('automation_test_track', 'Driving Analysis - Ford Motors')
-
-    vehicle = Vehicle('test_vehicle', model='covet', license = player_id, color='Green')
+    vehicle = Vehicle('Vehicle', model='covet', license=player_id, color='Green')
     imu_sensor = IMU(pos=(0.73, 0.51, 0.8), debug=True)
     electrics_sensor = Electrics()
     damage_sensor = Damage()
@@ -26,8 +26,7 @@ def game(player_id):
     scenario.add_vehicle(vehicle, pos=(497.1917725, 178.2896118, 131.7432404), rot_quat=(0.002234787144, -0.0014619524, 0.6965841062, 0.7174701746))
     scenario.make(beamng)
     data = []
-    column_names = ['Time'] 
-
+    column_names = ['Time']
 
     essential_keys = [
         'speed', 'accXSmooth', 'accYSmooth', 'accZSmooth', 'gear', 'rpm', 'brake', 'throttle',
@@ -50,13 +49,22 @@ def game(player_id):
             filtered_data = {key: value for key, value in sensor.data.items() if key in essential_keys}
             row_data.update({f"{key}": value for key, value in filtered_data.items()})
         if t == 0:
-            column_names.extend(sorted(row_data.keys())[1:])  # Exclude 'Time' since it's already added
+            column_names.extend(sorted(row_data.keys())[1:])  
         data.append([row_data[col] for col in column_names])
         beamng.control.step(30)
+
+    dtc_codes = generate_engine_dtc_codes()
+    if "DTC" not in column_names:  
+        column_names.append("DTC")
+    for row in data:
+        row.append('')  
+    data[0][-1] = str(dtc_codes)  
+
     beamng.close()
     df = pd.DataFrame(data, columns=column_names)
     df.to_csv(f'telematics/{player_id}_vehicle_data.csv', index=False)
     upload_to_bigquery(f'telematics/{player_id}_vehicle_data.csv', player_id)
+    print(f"Data saved for player {player_id}")
     print(df.head())
 
 def upload_to_bigquery(csv_file_path, table_id):
@@ -77,3 +85,23 @@ def upload_to_bigquery(csv_file_path, table_id):
     destination_table = client.get_table(table_id_full)
     print(f"Loaded {destination_table.num_rows} rows into {table_id_full}.")
     
+def generate_engine_dtc_codes(num_codes=5):
+
+    engine_issues = {
+        'fuel_system': range(100, 200),   # P0100 to P0199
+        'ignition_system': range(300, 400),   # P0300 to P0399
+        'emission_control': range(400, 500),  # P0400 to P0499
+        'engine_idle_control': range(500, 600),  # P0500 to P0599
+        'computer_output_circuit': range(600, 700),  # P0600 to P0699
+    }
+
+    dtc_codes = []
+    for _ in range(num_codes):
+        issue_category = random.choice(list(engine_issues.keys()))
+        code = f"P{random.choice(list(engine_issues[issue_category])):04}"
+        dtc_codes.append(code)
+
+    return dtc_codes
+
+
+
