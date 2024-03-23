@@ -9,6 +9,7 @@ from chat import get_response_from_model
 from vertexai.preview.generative_models import GenerativeModel
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from ast import literal_eval
 
 app = FastAPI()
 
@@ -29,7 +30,7 @@ class Player(BaseModel):
     player_id: str
     
 class ChatMessage(BaseModel):
-    message: str
+    # message: str
     player_id: str
     
 import logging
@@ -72,7 +73,7 @@ async def generate_summary_endpoint(player: Player) -> Dict:
         water_temp_data = [{'Time': row['Time'], 'Water Temperature': row['water_temperature']} for index, row in df.iterrows()]
         gear_distribution = df['gear'].value_counts().reset_index().rename(columns={'index': 'Gear', 'gear': 'Frequency'})
         gear_distribution_data = [{'Gear': row['Gear'], 'Frequency': row['Frequency']} for index, row in gear_distribution.iterrows()]
-        
+        part_damage = literal_eval(df['part_damage'].iloc[-1])
         graphs = [
             {
                 'graph_type': 'line',
@@ -101,24 +102,47 @@ async def generate_summary_endpoint(player: Player) -> Dict:
                 'x_axis': 'Gear',
                 'y_axis': 'Frequency',
                 'data': gear_distribution_data
+            },
+            {
+                'graph_type': 'pie',
+                'title': 'Damaged Parts Distribution',
+                'data': part_damage
             }
         ]
+        
+        df = pd.read_csv(f'telematics/{player.player_id}_vehicle_data.csv')
+        dtc_codes = df['DTC'].iloc[0]
+    
+        model = GenerativeModel("gemini-1.0-pro-001")
+        dtc_response = model.generate_content(
+            f"""{dtc_codes}\n\nBased on the above DTC codes generate What are the possible Causes and what are the diagnostic steps and recommended fixes, combine them and tell me what could be the problem""",
+            generation_config={
+                "max_output_tokens": 2048,
+                "temperature": 0,
+                "top_p": 1
+            },
+            stream=False,
+        )
+    
+   
 
-        return {"generated_text": responses.text, "player_id": player_id, "graphs": graphs}
+        return {"generated_text": responses.text, "player_id": player_id, "graphs": graphs, "dtc_response": dtc_response.text, "dtc_codes": dtc_codes}
+    
+    
 
     except Exception as e:
         logging.error(f"Error occurred: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 
-@app.post("/chat")
-def multiturn_generate_content(chat_message: ChatMessage):
-    message = chat_message.message
-    player_id = chat_message.player_id
-    message = chat_message.message
-    response = get_response_from_model(message, player_id)
-    return {"response": response}
+# @app.post("/chat")
+# def multiturn_generate_content(chat_message: ChatMessage):
+#     message = chat_message.message
+#     player_id = chat_message.player_id
+#     message = chat_message.message
+#     response = get_response_from_model(message, player_id)
+#     return {"response": response}
 
-
+    
 
 # To run the server, execute the following command: uvicorn api:app --reload
