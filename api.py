@@ -5,7 +5,7 @@ from ast import literal_eval
 import vertexai
 from app import game
 from stats import aggregate_statistics
-from chat import get_response_from_model
+# from chat import get_response_from_model
 from vertexai.preview.generative_models import GenerativeModel
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -74,7 +74,20 @@ async def generate_summary_endpoint(player: Player) -> Dict:
         gear_distribution = df['gear'].value_counts().reset_index().rename(columns={'index': 'Gear', 'gear': 'Frequency'})
         gear_distribution_data = [{'Gear': row['Gear'], 'Frequency': row['Frequency']} for index, row in gear_distribution.iterrows()]
         part_damage = literal_eval(df['part_damage'].iloc[-1])
+        steering = df['steering'].diff().abs().sum()
         graphs = [
+            {
+                'graph_type': 'pie',
+                'title': 'Damaged Parts Distribution',
+                'data': part_damage
+            },
+            {
+                'graph_type': 'bar',
+                'title': 'Gear Distribution',
+                'x_axis': 'Gear',
+                'y_axis': 'Frequency',
+                'data': gear_distribution_data
+            },
             {
                 'graph_type': 'line',
                 'title': 'Fuel Level Over Time',
@@ -97,16 +110,11 @@ async def generate_summary_endpoint(player: Player) -> Dict:
                 'data': water_temp_data
             },
             {
-                'graph_type': 'bar',
-                'title': 'Gear Distribution',
-                'x_axis': 'Gear',
-                'y_axis': 'Frequency',
-                'data': gear_distribution_data
-            },
-            {
-                'graph_type': 'pie',
-                'title': 'Damaged Parts Distribution',
-                'data': part_damage
+                'graph_type': 'area',
+                'title': 'Steering Changes',
+                'x_axis': 'Time',
+                'y_axis': 'Steering',
+                'data': [{'Time': row['Time'], 'Steering': row['steering']} for index, row in df.iterrows()]
             }
         ]
         
@@ -115,7 +123,7 @@ async def generate_summary_endpoint(player: Player) -> Dict:
     
         model = GenerativeModel("gemini-1.0-pro-001")
         dtc_response = model.generate_content(
-            f"""{dtc_codes}\n\nBased on the above DTC codes generate What are the possible Causes and what are the diagnostic steps and recommended fixes, combine them and tell me what could be the problem""",
+            f"""{dtc_codes}\n\nBased on the above DTC codes, What could be the root cause of the problem? Also, provide the diagnostic steps and recommended fixes for the problem. Generate a detailed report. The report will identify potential root causes, provide a step-by-step diagnostic approach, and recommend solutions to resolve the issues.""",
             generation_config={
                 "max_output_tokens": 2048,
                 "temperature": 0,
