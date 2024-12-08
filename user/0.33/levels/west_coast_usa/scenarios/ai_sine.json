@@ -1,0 +1,1 @@
+[{"difficulty":0,"name":"ai_sine","lapConfig":{},"vehicles":{"ego_vehicle":{"startFocus":true,"playerUsable":true}},"authors":"BeamNGpy","prefabs":["levels/west_coast_usa/scenarios/ai_sine.prefab.json"]}]

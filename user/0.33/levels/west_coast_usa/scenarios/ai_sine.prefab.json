@@ -1,0 +1,2 @@
+{ "name": "ego_vehicle", "class": "BeamNGVehicle", "persistentId": "e4a0b684-c60e-4353-9b70-f375652e8ccd", "__parent": "ai_sine_group", "position": [-769.1, 400.8, 142.8], "dataBlock": "default_vehicle", "jBeam": "etk800", "licenseText": "AI", "rotationMatrix": [-1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 1.0], "autoEnterVehicle": false}
+{ "name": "ai_sine_group", "class": "SimGroup", "persistentId": "2d1c498f-ce16-437e-b466-3be1d4ae95f6", "groupPosition": "0.000000 0.000000 0.000000"}

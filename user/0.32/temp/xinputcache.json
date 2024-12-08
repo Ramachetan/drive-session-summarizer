@@ -1,0 +1,114 @@
+[
+  {
+    "devId": "",
+    "nameDInput": "",
+    "nameWMI": "Microsoft Xbox One Controller",
+    "type": "xinput",
+    "vidpid": "045e02d1"
+  },
+  {
+    "devId": "",
+    "nameDInput": "",
+    "nameWMI": "XBox360 Wired Gamepad",
+    "type": "xinput",
+    "vidpid": "045e02a1"
+  },
+  {
+    "devId": "",
+    "nameDInput": "",
+    "nameWMI": "XBox360 Wireless Gamepad",
+    "type": "xinput",
+    "vidpid": "045e028e"
+  },
+  {
+    "devId": "",
+    "nameDInput": "",
+    "nameWMI": "Razer Sabertooth Gaming Controller (XBOX360)",
+    "type": "xinput",
+    "vidpid": "fe001689"
+  },
+  {
+    "devId": "HID\\VID_8087&PID_0AC2\\6&335B7291&0&0000",
+    "nameDInput": "",
+    "nameWMI": "HID Sensor Collection V2",
+    "type": "directinput",
+    "vidpid": "80870ac2"
+  },
+  {
+    "devId": "USB\\VID_0C45&PID_672E&MI_00\\6&3A25B567&0&0000",
+    "nameDInput": "",
+    "nameWMI": "Integrated Webcam",
+    "type": "directinput",
+    "vidpid": "0c45672e"
+  },
+  {
+    "devId": "USB\\VID_27C6&PID_63AC\\UID725C88E6_XXXX_MOC_B0",
+    "nameDInput": "",
+    "nameWMI": "Goodix MOC Fingerprint",
+    "type": "directinput",
+    "vidpid": "27c663ac"
+  },
+  {
+    "devId": "HID\\VID_FFFF&PID_BACE&REV_0002&MI_00&COL01\\3&258C3FBC&0&0000",
+    "nameDInput": "",
+    "nameWMI": "HID Keyboard Device",
+    "type": "directinput",
+    "vidpid": "ffffbace"
+  },
+  {
+    "devId": "USB\\VID_8087&PID_0026\\5&1723E66E&0&14",
+    "nameDInput": "",
+    "nameWMI": "Intel(R) Wireless Bluetooth(R)",
+    "type": "directinput",
+    "vidpid": "80870026"
+  },
+  {
+    "devId": "",
+    "nameDInput": "Mouse",
+    "nameWMI": "",
+    "type": "unknown",
+    "vidpid": "2b606f1d"
+  },
+  {
+    "devId": "",
+    "nameDInput": "Keyboard",
+    "nameWMI": "",
+    "type": "unknown",
+    "vidpid": "2b616f1d"
+  },
+  {
+    "devId": "USB\\VID_045E&PID_0B12\\3039373130303735373937313436",
+    "nameDInput": "",
+    "nameWMI": "Xbox Controller",
+    "type": "directinput",
+    "vidpid": "045e0b12"
+  },
+  {
+    "devId": "USB\\VID_2109&PID_0211\\5&1723E66E&0&17",
+    "nameDInput": "",
+    "nameWMI": "Generic SuperSpeed USB Hub",
+    "type": "directinput",
+    "vidpid": "21090211"
+  },
+  {
+    "devId": "USB\\VID_2109&PID_2211\\5&1723E66E&0&3",
+    "nameDInput": "",
+    "nameWMI": "Generic USB Hub",
+    "type": "directinput",
+    "vidpid": "21092211"
+  },
+  {
+    "devId": "USB\\VID_045E&PID_02FF&IG_00\\00&00&00000681A687ED7E",
+    "nameDInput": "Controller (Xbox One For Windows)",
+    "nameWMI": "USB Input Device",
+    "type": "xinput",
+    "vidpid": "045e02ff"
+  },
+  {
+    "devId": "USB\\VID_413C&PID_B080\\00000000000000000",
+    "nameDInput": "",
+    "nameWMI": "Dell DA20 Adapter",
+    "type": "directinput",
+    "vidpid": "413cb080"
+  }
+]

@@ -1,0 +1,318 @@
+  0.00074|D|logging| -- Log started - v 0.33.3.0 - x64 - build 17209 - 2024-12-08 -- 12:11:40 -----
+  0.00075|D|logging| -- buildbot build 17209 on winbuildbot3 - 04/10/2024 - 16:16:55
+  0.00075|D|logging| -- Log Format: Time since startup | Message level: D(ebug), I(nfo), W(arning), E(rror), A(lways) | Message
+  0.15575|I|engine::initFS| Virtual Filesystem: user path: D:\miracle\code\game\user\0.33\
+  0.15577|D|engine::initFS|  - user path reason: Command argument -userpath
+  0.15577|D|engine::initFS|  - user mods path: D:\miracle\code\game\user\0.33\mods/
+  0.15577|D|engine::initFS|  - game mods path: D:/SteamLibrary/steamapps/common/BeamNG.drive/content/
+  0.15587|I|engine::Processor::init| 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz ~2.30 GHz [HT,] 1 physical, 8 cores, 16 logical
+  0.15590|D|main| H2 6B40197ECECCB9562E4FFE0290A495AA4209
+  0.15824|D|engine::DirectInputInputDeviceSystem::initialize| Initializing DirectInput...
+  0.17294|D|engine::DirectInputInputDeviceSystem::enumerateDevices|  *** DirectInput device enumeration about to begin
+  0.18601|D|engine::DirectInputDevice::initialize| Mouse [instance: Mouse] detected, created as mouse0 (asynchronous)
+  0.18605|D|engine::DirectInputDevice::initialize|  - devtype 0x112
+  0.18606|D|engine::DirectInputDevice::initialize|  - A mouse or mouse-like device (such as a trackball)
+  0.18607|D|engine::DirectInputDevice::initialize|  + 3 axes
+  0.18608|D|engine::DirectInputDevice::initialize|  + 5 buttons
+  0.18617|D|engine::DirectInputDevice::initialize| created device 'mouse0', took 0.000s: create:0.012ms, caps:0.000ms, txts:0.088ms, enum:0.037ms, fmt:0.007ms, buff:0.016ms, axis:0.001ms
+  0.18621|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Mouse' took 0.008s: conv:0.002ms, type:0.000ms, xinp:7.946ms, add/create:0.250ms, create():0.000ms
+  0.18630|D|engine::DirectInputDevice::initialize| Keyboard [instance: Keyboard] detected, created as keyboard0 (asynchronous)
+  0.18631|D|engine::DirectInputDevice::initialize|  - devtype 0x413
+  0.18632|D|engine::DirectInputDevice::initialize|  - Keyboard or keyboard-like:
+  0.18633|D|engine::DirectInputDevice::initialize|   - IBM PC Enhanced 101/102-key or Microsoft Natural keyboard.
+  0.18633|D|engine::DirectInputDevice::initialize|  + 128 buttons
+  0.18664|D|engine::DirectInputDevice::initialize| created device 'keyboard0', took 0.000s: create:0.010ms, caps:0.000ms, txts:0.036ms, enum:0.274ms, fmt:0.024ms, buff:0.000ms, axis:0.000ms
+  0.18666|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Keyboard' took 0.000s: conv:0.000ms, type:0.000ms, xinp:0.000ms, add/create:0.393ms, create():0.000ms
+  0.19461|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HID-compliant consumer control device'
+  0.19463|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HID-compliant consumer control device' took 0.000s: conv:0.001ms, type:0.022ms
+  0.19561|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HID-compliant system controller'
+  0.19562|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HID-compliant system controller' took 0.000s: conv:0.000ms, type:0.014ms
+  0.19647|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Converted Portable Device Control device'
+  0.19650|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Converted Portable Device Control device' took 0.000s: conv:0.001ms, type:0.016ms
+  0.19744|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Converted Portable Device Control device'
+  0.19745|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Converted Portable Device Control device' took 0.000s: conv:0.001ms, type:0.014ms
+  0.19838|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Intel(R) HID Event Filter'
+  0.19840|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Intel(R) HID Event Filter' took 0.000s: conv:0.001ms, type:0.014ms
+  0.19894|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HIDI2C Device'
+  0.20116|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HIDI2C Device' took 0.002s: conv:0.000ms, type:2.210ms
+  0.20242|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Intel(R) HID Event Filter'
+  0.20243|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Intel(R) HID Event Filter' took 0.000s: conv:0.001ms, type:0.012ms
+  0.20288|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HIDI2C Device'
+  0.20289|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HIDI2C Device' took 0.000s: conv:0.001ms, type:0.010ms
+  0.20326|D|engine::DirectInputInputDeviceSystem::enumerateDevices|  *** DirectInput device enumeration finished after 0.030s: DirectInput code:19.22ms, BeamNG code:11.04ms
+  0.20368|D|engine::DirectInputInputDeviceSystem::enumerateDevices|  *** DirectInput device enumeration about to begin
+  0.20855|D|engine::DirectInputDevice::initialize| Mouse [instance: Mouse] detected, created as mouse0 (asynchronous)
+  0.20860|D|engine::DirectInputDevice::initialize|  - devtype 0x112
+  0.20862|D|engine::DirectInputDevice::initialize|  - A mouse or mouse-like device (such as a trackball)
+  0.20863|D|engine::DirectInputDevice::initialize|  + 3 axes
+  0.20863|D|engine::DirectInputDevice::initialize|  + 5 buttons
+  0.20868|D|engine::DirectInputDevice::initialize| created device 'mouse0', took 0.000s: create:0.003ms, caps:0.001ms, txts:0.097ms, enum:0.017ms, fmt:0.003ms, buff:0.001ms, axis:0.000ms
+  0.20870|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Mouse' took 0.000s: conv:0.002ms, type:0.000ms, xinp:0.001ms, add/create:0.166ms, create():0.000ms
+  0.20983|D|engine::DirectInputDevice::initialize| Keyboard [instance: Keyboard] detected, created as keyboard0 (asynchronous)
+  0.20983|D|engine::DirectInputDevice::initialize|  - devtype 0x413
+  0.20984|D|engine::DirectInputDevice::initialize|  - Keyboard or keyboard-like:
+  0.20984|D|engine::DirectInputDevice::initialize|   - IBM PC Enhanced 101/102-key or Microsoft Natural keyboard.
+  0.20985|D|engine::DirectInputDevice::initialize|  + 128 buttons
+  0.21012|D|engine::DirectInputDevice::initialize| created device 'keyboard0', took 0.001s: create:0.373ms, caps:0.000ms, txts:0.029ms, enum:0.233ms, fmt:0.024ms, buff:0.000ms, axis:0.000ms
+  0.21013|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Keyboard' took 0.001s: conv:0.000ms, type:0.000ms, xinp:0.000ms, add/create:0.683ms, create():0.000ms
+  0.21778|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HID-compliant consumer control device'
+  0.21780|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HID-compliant consumer control device' took 0.000s: conv:0.001ms, type:0.018ms
+  0.21914|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HID-compliant system controller'
+  0.21915|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HID-compliant system controller' took 0.000s: conv:0.000ms, type:0.012ms
+  0.22005|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Converted Portable Device Control device'
+  0.22007|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Converted Portable Device Control device' took 0.000s: conv:0.001ms, type:0.012ms
+  0.22086|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Converted Portable Device Control device'
+  0.22087|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Converted Portable Device Control device' took 0.000s: conv:0.000ms, type:0.011ms
+  0.22170|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Intel(R) HID Event Filter'
+  0.22171|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Intel(R) HID Event Filter' took 0.000s: conv:0.001ms, type:0.011ms
+  0.22210|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HIDI2C Device'
+  0.22212|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HIDI2C Device' took 0.000s: conv:0.000ms, type:0.009ms
+  0.22283|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'Intel(R) HID Event Filter'
+  0.22284|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'Intel(R) HID Event Filter' took 0.000s: conv:0.000ms, type:0.011ms
+  0.22320|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| Ignoring unsuitable didevice_type 0x11 (17) for device 'HIDI2C Device'
+  0.22321|D|engine::DirectInputInputDeviceSystem::EnumDevicesProc| EnumDevicesProc() for device 'HIDI2C Device' took 0.000s: conv:0.001ms, type:0.008ms
+  0.22323|D|engine::DirectInputInputDeviceSystem::enumerateDevices|  *** DirectInput device enumeration finished after 0.020s: DirectInput code:18.44ms, BeamNG code:1.091ms
+  0.22328|D|engine::Platform::init| 11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz GenuineIntel x64
+  0.22334|D|engine::Platform::init| Microsoft Windows 11  (v10.0) (build 26100), 64-bit
+  0.22336|D|engine::Platform::init| Physical memory: 31.73 GB
+  0.22337|D|engine::Platform::init| Battery: state: 'high' - online
+  0.22338|D|engine::Platform::init| Process Priority: Normal (0x20)
+  0.22359|D|engine::ModuleManager::initializeSystem| initializing 115 modules (only displaying anything above 0.1 s)...
+  0.23377|D|engine::SFXFMODProvider::init| SFXFMODProvider - FMOD API version: 2.02.17
+  0.36912|D|engine::ModuleManager::initializeSystem|  - SFXModule in 0.1455047 seconds
+  0.39051|D|engine::SFXSystem::createDevice| Using default audio device: Headphones (2- AirPods Pro)
+  0.48966|D|engine::SFXSystem::createDevice| Created FMOD device 'Headphones (2- AirPods Pro)'
+  0.48974|D|engine::SFXSystem::createDevice|    CAPS_VoiceManagement
+  0.49015|D|engine::SFXSystem::finalizeInitialization|    Provider: FMOD
+  0.49016|D|engine::SFXSystem::finalizeInitialization|    Hardware: false
+  0.49017|D|engine::SFXSystem::finalizeInitialization|    Buffers: 16
+  0.50411|I|GELua.| ============== GELUA VM loading ===============
+  0.58809|D|GELua.gameplay_missions_progress.| Loaded 0 condition types from 0 files.
+  0.59032|D|GELua.gameplay_missions_missions.| Loaded 2 procedural Mission Generators from 2 files.
+  0.59350|D|GELua.gameplay_missions_unlocks.| Loaded 9 condition types from 4 files.
+  0.62519|D|engine::ModuleManager::initializeSystem|  - GameEngineLua in 0.1348728 seconds
+  0.62527|D|engine::GFXInit::init| GFX Init:
+  0.62529|D|engine::_GFXInitReportAdapters|    Null device found
+  0.62537|D|engine::ModuleManager::initializeSystem| ... all modules loaded in 0.4017809 seconds
+  0.62554|D|engine::MainLoop::init| OpenXR: Steam VR mode: disabled
+  0.62630|D|CommandListener| CommandListener started
+  0.63953|D|engine::GFXInit::createDevice| Available adapters: 2
+  0.63956|D|engine::GFXInit::createDevice|  - name:NVIDIA GeForce RTX 3050 Ti Laptop GPU (D3D11), outputName:\\.\DISPLAY1, gfx:D3D11, gpu:NVIDIA GeForce RTX 3050 Ti Laptop GPU
+  0.63956|D|engine::GFXInit::createDevice|  - name:GFX Null Device, outputName:, gfx:, gpu:
+  0.63957|D|engine::GFXInit::createDevice| Attempting to create GFX device 0: NVIDIA GeForce RTX 3050 Ti Laptop GPU (D3D11) [with output \\.\DISPLAY1]
+  0.63957|D|engine::GFXInit::createDevice| shader model: 5.0 , available video modes: 74
+  0.63959|D|engine::GFXInit::createDevice| Device created, setting adapter and enumerating modes
+  1.54724|D|engine::GFXD3D11Device::init| Hardware occlusion query detected: Yes
+  1.54788|D|engine::GFXCardProfiler::init| D3D11 -  (NVIDIA GeForce RTX 3050 Ti Laptop GPU) [3965 MB] ver 
+  1.54791|D|engine::GFXCardProfiler::setCapability| GFXCardProfiler (D3D11) - Setting capability 'maxTextureWidth' to 8192.
+  1.54792|D|engine::GFXCardProfiler::setCapability| GFXCardProfiler (D3D11) - Setting capability 'maxTextureHeight' to 8192.
+  1.54793|D|engine::GFXCardProfiler::setCapability| GFXCardProfiler (D3D11) - Setting capability 'maxTextureSize' to 8192.
+  1.54794|D|engine::GFXCardProfiler::setCapability| GFXCardProfiler (D3D11) - Setting capability 'autoMipMapLevel' to 1.
+  1.54794|D|engine::GFXCardProfiler::setCapability| GFXCardProfiler (D3D11) - Setting capability 'lerpDetailBlend' to 1.
+  1.54795|D|engine::GFXCardProfiler::setCapability| GFXCardProfiler (D3D11) - Setting capability 'fourStageDetailBlend' to 1.
+  1.54908|D|engine::ShaderGen::initShaderGen| Failed to remove file /temp/shaders/procedural/autogenConditioners.h
+  1.54969|D|bng::VfsWrapper::sanitizePathAsStr| Empty path will be resolved to root but should not be used
+  1.54996|D|bng::VfsWrapper::sanitizePathAsStr| Empty path will be resolved to root but should not be used
+  1.55015|D|bng::VfsWrapper::sanitizePathAsStr| Empty path will be resolved to root but should not be used
+  1.55038|D|bng::VfsWrapper::sanitizePathAsStr| Empty path will be resolved to root but should not be used
+  1.55074|D|engine::GFXD3D11Device::init| GFXDevice 11 - SM 5
+  1.58929|D|engine::GFXD3D11WindowTarget::init| setting video mode: Width 1280, Height 720, Format 28, Windowed 1
+  1.58996|D|engine::Win32Window::setVideoMode| AntialiasLevel: 0, BitDepth: 32, DisplayMode: Window, RefreshRate: 60, Resolution: 1280x720, wideScreen: false
+  1.59000|D|engine::Win32Window::setVideoMode| Win32Window::setVideoMode - invoking curtain
+  1.65993|D|engine::GFXD3D11WindowTarget::resetMode| setting video mode: Width 1280, Height 720, Windowed 1, RefreshRate 60/1
+  1.66192|D|engine::GFXD3D11WindowTarget::resetMode| D3D11Device::reset: resizing buffers: BufferCount 1, Width 1280, Height 720, Format 28, Windowed 1
+  1.67662|D|GELua.core_settings_graphic.graphic| Sanitizing display - //./DISPLAY1: Passed.
+  1.67667|D|GELua.core_settings_graphic.graphic| Sanitizing display mode - Window: Passed.
+  1.67669|D|GELua.core_settings_graphic.graphic| Sanitizing display resolution for Window mode - 1280 720: Passed.
+  1.69501|D|engine::GFXD3D11WindowTarget::resetMode| setting video mode: Width 1280, Height 720, Windowed 1, RefreshRate 60/1
+  1.69630|D|engine::GFXD3D11WindowTarget::resetMode| D3D11Device::reset: resizing buffers: BufferCount 1, Width 1280, Height 720, Format 28, Windowed 1
+  1.73374|D|engine::loadFonts| Loading 13 imgui fonts...
+  1.73388|D|engine::imguiCreateContext| Adding fonts to imgui:
+  1.73412|D|engine::imguiCreateContext| 	'cairo_bold'->'ui\common\Cairo-Bold.ttf' Scale: 1.3  RangeCount: 3
+  1.73431|D|engine::imguiCreateContext| 	'cairo_regular'->'ui\common\Cairo-Regular.ttf' Scale: 1.3  RangeCount: 3
+  1.73445|D|engine::imguiCreateContext| 	'cairo_regular_medium'->'ui\common\Cairo-Regular.ttf' Scale: 1.8  RangeCount: 3
+  1.73462|D|engine::imguiCreateContext| 	'cairo_semibold_large'->'ui\common\Cairo-SemiBold.ttf' Scale: 2  RangeCount: 3
+  1.73495|D|engine::imguiCreateContext| 	'consola_regular'->'C:\WINDOWS\Fonts\consola.ttf' Scale: 1  RangeCount: 4
+  1.73526|D|engine::imguiCreateContext| 	'icons'->'ui\common\fa-solid-900.ttf' Scale: 3  RangeCount: 1
+  1.73808|D|engine::imguiCreateContext| 	'notosans_jp_regular'->'ui\common\NotoSansJP-Regular.otf' Scale: 1  RangeCount: 3004
+  1.73957|D|engine::imguiCreateContext| 	'notosans_kr_regular'->'ui\common\NotoSansKR-Regular.otf' Scale: 1  RangeCount: 3
+  1.74357|D|engine::imguiCreateContext| 	'notosans_sc_regular'->'ui\common\NotoSansSC-Regular.otf' Scale: 1  RangeCount: 2506
+  1.74596|D|engine::imguiCreateContext| 	'notosans_tc_regular'->'ui\common\NotoSansTC-Regular.otf' Scale: 1  RangeCount: 7
+  1.74625|D|engine::imguiCreateContext| 	'prompt_regular'->'ui\common\Prompt-Regular.ttf' Scale: 1  RangeCount: 3
+  1.74642|D|engine::imguiCreateContext| 	'robotomono_regular'->'ui\common\RobotoMono-Regular.ttf' Scale: 1  RangeCount: 4
+  1.74693|D|engine::imguiCreateContext| 	'segoeui_regular'->'C:\WINDOWS\Fonts\segoeui.ttf' Scale: 1  RangeCount: 4
+  2.99610|D|imgui.fonts| font texture contains 13 fonts. Atlas size: 4096x16384px
+  2.99614|D|imgui.fonts|  - cairo_bold           [24.3 px]:    292 glyphs
+  2.99614|D|imgui.fonts|  - cairo_regular        [24.3 px]:    292 glyphs
+  2.99615|D|imgui.fonts|  - cairo_regular_medium [33.7 px]:    292 glyphs
+  2.99615|D|imgui.fonts|  - cairo_semibold_large [37.4 px]:    292 glyphs
+  2.99616|D|imgui.fonts|  - consola_regular      [18.7 px]:    465 glyphs
+  2.99616|D|imgui.fonts|  - icons                [56.1 px]:     16 glyphs
+  2.99617|D|imgui.fonts|  - notosans_jp_regular  [18.7 px]:   3685 glyphs
+  2.99617|D|imgui.fonts|  - notosans_kr_regular  [18.7 px]:    388 glyphs
+  2.99618|D|imgui.fonts|  - notosans_sc_regular  [18.7 px]:   3220 glyphs
+  2.99618|D|imgui.fonts|  - notosans_tc_regular  [18.7 px]:  16064 glyphs
+  2.99619|D|imgui.fonts|  - prompt_regular       [18.7 px]:    299 glyphs
+  2.99619|D|imgui.fonts|  - robotomono_regular   [18.7 px]:    460 glyphs
+  2.99620|D|imgui.fonts|  - segoeui_regular      [18.7 px]:    465 glyphs
+  2.99620|D|imgui.fonts| 26230 glyphs totally
+  3.03044|D|engine::Material::_mapMaterial| [Material::mapMaterial] - Cannot map unnamed Material - settings/game-settings.cs
+  3.22680|I|GELua.| ============== GELUA VM loaded ================
+  3.29270|D|engine::run| Started up in 3.32 seconds: fs:43.45ms, crashrpt:30.29ms, fs:105.6ms, platform:66.75ms, modules:401.9ms, TScmdline:2616.ms, cef2:50.94ms
+  3.30466|D|engine::DirectInputDevice::acquire| Succesfully acquired directinput device mouse0
+  3.30548|D|engine::DirectInputDevice::acquire| Succesfully acquired directinput device keyboard0
+  3.33223|W|GELua.core_levels.| info.json missing: /levels/GridMap/info.json
+  3.33471|E|GELua.core_levels.| No entry point for level found: /levels/GridMap. Ignoring level.
+  3.63378|D|GELua._lua_ge_extensions_gameplay_missions_proceduralMissionGenerators_timeTrialMissions.| Hid 0 prodecural TimeTrials missions because they were hidden by real missions.
+  3.63410|D|GELua.gameplay_missions_missions.| Loaded 494 total missions: 455 from files, 39 from generators.
+  3.97782|D|GELua.gameplay_missions_unlocks.| Processed unlock status of missions: 443/494 startable missions, 406/494 visible missions.
+  3.99670|I|GELua.TechCom| Started listening on 127.0.0.1/64256.
+  4.22809|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/main_preload.assets.bank' in 0.07245420000000014 seconds. Preload sample data = true.
+  4.30696|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/main_preload.streams.bank' in 0.07868079999999988 seconds. Preload sample data = true.
+  4.39691|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/vehicle_preload.assets.bank' in 0.08967320000000001 seconds. Preload sample data = true.
+  4.47804|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/vehicle_preload.streams.bank' in 0.0808624 seconds. Preload sample data = true.
+  4.52876|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/ambient_maps.streams.bank' in 0.05050880000000024 seconds. Preload sample data = false.
+  4.56858|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/music.assets.bank' in 0.03967559999999981 seconds. Preload sample data = false.
+  4.60971|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/music.streams.bank' in 0.040992600000000046 seconds. Preload sample data = false.
+  4.65958|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/speech.assets.bank' in 0.049547300000000405 seconds. Preload sample data = false.
+  4.70012|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/speech.streams.bank' in 0.04021689999999989 seconds. Preload sample data = false.
+  4.73803|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/ui.assets.bank' in 0.03767540000000036 seconds. Preload sample data = false.
+  4.78014|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/ui.streams.bank' in 0.041903600000000374 seconds. Preload sample data = false.
+  4.83032|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/vehicle.assets.bank' in 0.05006520000000059 seconds. Preload sample data = false.
+  4.86956|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/vehicle.streams.bank' in 0.03904569999999996 seconds. Preload sample data = false.
+  4.94676|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/main_preload.strings.bank' in 0.07702909999999985 seconds. Preload sample data = true.
+  5.03668|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/main_preload.bank' in 0.08870570000000022 seconds. Preload sample data = true.
+  5.32017|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/vehicle_preload.bank' in 0.28196819999999967 seconds. Preload sample data = true.
+  5.35923|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/music.bank' in 0.038032699999999586 seconds. Preload sample data = false.
+  5.39857|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/speech.bank' in 0.039041999999999355 seconds. Preload sample data = false.
+  5.43865|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/ui.bank' in 0.039798300000000175 seconds. Preload sample data = false.
+  5.57700|D|engine::SFXFMODProject::acquire| SFXFMODProject: Opened project '/art/sound/fmod/desktop/vehicle.bank' in 0.13737520000000014 seconds. Preload sample data = false.
+  5.63393|D|GELua.core_input_bindings.bindings| Loaded 280 bindings for device keyboard0
+  5.63418|D|GELua.core_input_bindings.bindings| Loaded 19 bindings for device mouse0
+  5.74892|D|engine::SFXSystem::createDevice| Using default audio device: Headphones (2- AirPods Pro)
+  5.74961|D|GELua.gameplay_rawPois.| Raw Poi Lists Cleared. New Generation: 1
+  5.74964|D|GELua.gameplay_rawPois.| Raw Poi Lists Cleared. New Generation: 2
+  5.74983|D|GELua.gameplay_rawPois.| Raw Poi Lists Cleared. New Generation: 3
+  5.74984|D|GELua.gameplay_rawPois.| Raw Poi Lists Cleared. New Generation: 4
+  5.75054|D|GELua.core_settings_settings.| refreshLanguages(): oldLanguage = ""  appliedLanguage = "" userLanguage = ""
+  5.75057|D|GELua.core_settings_settings.|        switching language.
+  6.07276|D|engine::reloadLanguages| Switched to OS language: '' -> 'en-US' ('en-US')
+  6.07456|D|GELua.core_settings_settings.| set font: segoeui_regular
+  6.07547|D|GELua.core_settings_graphic.graphic| Applying graphic settings: \\.\DISPLAY1, Window, 1280 x 720 60 Hz
+  6.07550|D|engine::Win32Window::setVideoMode| AntialiasLevel: 0, BitDepth: 32, DisplayMode: Window, RefreshRate: 60, Resolution: 1280x720, wideScreen: false
+  6.07813|D|engine::GFXD3D11WindowTarget::resetMode| setting video mode: Width 1280, Height 720, Windowed 1, RefreshRate 60/1
+  6.07887|D|engine::GFXD3D11WindowTarget::resetMode| D3D11Device::reset: resizing buffers: BufferCount 1, Width 1280, Height 720, Format 28, Windowed 1
+  6.08756|D|engine::GFXD3D11WindowTarget::resetMode| setting video mode: Width 1280, Height 720, Windowed 1, RefreshRate 60/1
+  6.08766|D|engine::GFXD3D11WindowTarget::resetMode| D3D11Device::reset: resizing buffers: BufferCount 1, Width 1280, Height 720, Format 28, Windowed 1
+  6.09510|D|GELua.core_settings_graphic.graphic| Available Video Modes : { "1920 1200", "1920 1080", "1680 1050", "1600 1200", "1600 900", "1440 900", "1400 1050", "1366 768", "1360 768", "1280 1024", "1280 960", "1280 800", "1280 768", "1280 720", "1280 600", "1152 864", "1024 768", "800 600", "640 480" }
+  6.09524|D|engine::SFXSystem::createDevice| Using default audio device: Headphones (2- AirPods Pro)
+  6.59438|D|GELua.core_cameraModes_relative.core_camera.relative| No refNodes found, using default fallback
+  6.60900|D|GELua.core_input_bindings.bindings| Loaded 280 bindings for device keyboard0
+  6.60925|D|GELua.core_input_bindings.bindings| Loaded 19 bindings for device mouse0
+  6.79811|D|GELua.core_gamestate.gamestate| show main menu (true)
+  6.79984|D|GELua.core_gamestate.gamestate| ui finished loading
+  6.83777|D|CEF.MainGEUI#local://local/ui/modules/apps/app-container.js:168| Expected AppLayout but didn't get one :-( 
+  6.98675|D|GELua.core_modmanager.initDB| Notification : took 0.010200000000182ms to reorganise 0 files
+  7.02283|D|GELua.core_modmanager.initDB| Notification : took 36.0809ms to callback
+  7.02548|D|GELua.gameplay_rawPois.| Raw Poi Lists Cleared. New Generation: 5
+  7.32208|D|GELua._lua_ge_extensions_gameplay_missions_proceduralMissionGenerators_timeTrialMissions.| Hid 0 prodecural TimeTrials missions because they were hidden by real missions.
+  7.32262|D|GELua.gameplay_missions_missions.| Loaded 494 total missions: 455 from files, 39 from generators.
+  7.39963|D|GELua.gameplay_missions_unlocks.| Processed unlock status of missions: 443/494 startable missions, 406/494 visible missions.
+  9.24097|I|GELua.tech_techCore.TechGE| Accepted new client: 127.0.0.1/60628
+  9.24198|E|GELua.TechCom| A fatal error encountered during handling the command: [string "lua/common/tech/techCommunication.lua"]:290: bad argument #1 to 'copy' (size of C type is unknown or too large)
+  9.24409|E|GameEngineLua:Exception| [string "lua/common/tech/techCommunication.lua"]:290: bad argument #1 to 'copy' (size of C type is unknown or too large)
+=============== Stack Traceback >> START >>
+(1)  C function 'function: 0x023c091351f0'
+(2) field C function 'copy'
+(3) Lua field 'sendMessage' at line 290 of chunk 'lua/common/tech/techCommunication.lua'
+  skt = userdata: (...)
+  message = userdata: (...)
+  length = number: 145
+  lenPrefix = string[4]: "\0\0\0‘"
+(4) Lua method 'sendResponse' at line 335 of chunk 'lua/common/tech/techCommunication.lua'
+  self = table: 0x023c090221e8  {protocolVersion:v1.22, _id:0, type:Hello, skt:userdata: (...), handled:true (more...)}
+  message = table: 0x023c09022770  {_id:0, bngError:[string "lua/common/tech/techCommunication.lua"]:290: bad argument #1 to 'copy' (size of C type is unknown or too large) (more...)}
+(5) Lua method 'sendBNGError' at line 348 of chunk 'lua/common/tech/techCommunication.lua'
+  self = table: 0x023c090221e8  {protocolVersion:v1.22, _id:0, type:Hello, skt:userdata: (...), handled:true (more...)}
+  message = string[120]: "[string \"lua/common/tech/techCommunication.lua\"]:290: bad argument #1 to 'copy' (size of C type is unknown or too large)"
+  message = table: 0x023c09022770  {_id:0, bngError:[string "lua/common/tech/techCommunication.lua"]:290: bad argument #1 to 'copy' (size of C type is unknown or too large) (more...)}
+(6) Lua upvalue 'handleRequest' at line 143 of chunk 'lua/common/tech/techCommunication.lua'
+  handler = Lua function '?' (defined at line 639 of chunk lua/ge/extensions/tech/techCore.lua)
+  request = table: 0x023c090221e8  {protocolVersion:v1.22, _id:0, type:Hello, skt:userdata: (...), handled:true (more...)}
+  status = boolean: false
+  result = string[120]: "[string \"lua/common/tech/techCommunication.lua\"]:290: bad argument #1 to 'copy' (size of C type is unknown or too large)"
+(7) Lua upvalue 'callRequestHandler' at line 172 of chunk 'lua/common/tech/techCommunication.lua'
+  E = table: 0x023c59899150  {__extensionPath__:tech/techCore, handlePeaksAndRoadImport:function: 0x023c595c2eb0 (more...)}
+  request = table: 0x023c090221e8  {protocolVersion:v1.22, _id:0, type:Hello, skt:userdata: (...), handled:true (more...)}
+  msgType = string[11]: "handleHello"
+  handler = Lua function '?' (defined at line 639 of chunk lua/ge/extensions/tech/techCore.lua)
+(8) Lua field 'checkMessages' at line 206 of chunk 'lua/common/tech/techCommunication.lua'
+  E = table: 0x023c59899150  {__extensionPath__:tech/techCore, handlePeaksAndRoadImport:function: 0x023c595c2eb0 (more...)}
+  clients = table: 0x023c09e13770  {1:userdata: (...)}
+  message = string[39]: "ƒ¤type¥Hello¯protocolVersion¥v1.22£_id\0"
+  readable = table: 0x023c09021998  {1:userdata: (...), userdata: (...):1}
+  writable = table: 0x023c09021b60  {1:userdata: (...), userdata: (...):1}
+  err = nil
+  ret = boolean: true
+  (for index) = number: 1
+  (for limit) = number: 1
+  (for step) = number: 1
+  i = number: 1
+  skt = userdata: (...)
+  request = table: 0x023c090221e8  {protocolVersion:v1.22, _id:0, type:Hello, skt:userdata: (...), handled:true (more...)}
+(9) Lua local 'func' at line 568 of chunk 'lua/ge/extensions/tech/techCore.lua'
+  dt = number: 0.0169274
+  obsoleteFuncIndices = table: 0x023c0901f128  {}
+(10) Lua field 'hook' at line 715 of chunk 'lua/common/extensions.lua'
+  funcName = string[11]: "onPreRender"
+  funcList = table: 0x023c599cc088  {1:function: 0x023c5988b6c8, 2:function: 0x023c598d9908, 3:function: 0x023c5968f000 (more...)}
+  (for generator) = C function: builtin#6
+  (for state) = table: 0x023c599cc088  {1:function: 0x023c5988b6c8, 2:function: 0x023c598d9908, 3:function: 0x023c5968f000 (more...)}
+  (for control) = number: 2
+  _ = number: 2
+  func = Lua function '?' (defined at line 494 of chunk lua/ge/extensions/tech/techCore.lua)
+(11) Lua function 'luaPreRender' at file '/lua/ge/main.lua:469' (best guess)
+  dtReal = number: 0.0169274
+  dtSim = number: 0.016882
+  dtRaw = number: 0.0155146
+--------------- << END <<
+
+ 14.11149|I|engine::GuiCanvas::handleAppEvent| Window closed
+ 14.11657|D|engine::MainLoop::shutdown| *** shutdown ***
+ 14.11685|D|CommandListener| CommandListener done
+ 14.11758|I|GELua.|      112 bytes     0.01 ms TOTAL onPreExit()
+ 14.11915|I|GELua.|      112 bytes     0.01 ms   extensions.onPreExit
+ 14.12101|D|bng::VfsWrapper::sanitizePathAsStr| Empty path will be resolved to root but should not be used
+ 14.12212|I|GELua.postFx| % - PostFX Manager - Save complete. Preset saved at : settings/postfxSettings.postfx
+ 14.12484|I|GELua.|    77464 bytes     5.01 ms TOTAL onExit()
+ 14.12558|I|GELua.|      904 bytes     1.29 ms   extensions.onExit
+ 14.12628|I|GELua.|        0 bytes     0.00 ms   disconnectWrapper.bool
+ 14.12727|I|GELua.|      160 bytes     0.01 ms   disconnectActual.physicsStopSimulation
+ 14.13062|I|GELua.|       64 bytes     0.01 ms   disconnectActual.findCanvas
+ 14.13099|I|GELua.|        0 bytes     0.01 ms   disconnectActual.hideMouse
+ 14.13130|I|GELua.|        0 bytes     0.01 ms   disconnectActual.setVars
+ 14.13165|I|GELua.|        0 bytes     0.00 ms   server.destroy.setvar (x2)
+ 14.13201|I|GELua.|        0 bytes     0.01 ms   endMission.clearLogs
+ 14.13234|I|GELua.|        0 bytes     0.00 ms   endMission.finalSet
+ 14.13267|I|GELua.|        0 bytes     0.00 ms   server.destroy.endMission
+ 14.13294|I|GELua.|        0 bytes     0.00 ms   server.destroy.physics
+ 14.13316|I|GELua.|        0 bytes     0.01 ms   server.destroy.datablocks
+ 14.13341|I|GELua.|        0 bytes     0.00 ms   server.destroy.sessioncount
+ 14.13363|I|GELua.|        0 bytes     0.00 ms   server.destroy.rawsets
+ 14.13387|I|GELua.|        0 bytes     0.00 ms   disconnectActual.server
+ 14.13418|I|GELua.|        0 bytes     0.02 ms   disconnectActual.filename
+ 14.13443|I|GELua.|        0 bytes     0.00 ms   disconnectActual.requestExitLoadingScreen
+ 14.13468|I|GELua.|        0 bytes     0.00 ms   disconnectActual.callback
+ 14.13492|I|GELua.|        0 bytes     0.00 ms   disconnectWrapper.help
+ 14.13520|I|GELua.|        0 bytes     0.00 ms   noLoadingScreenDisconnect
+ 14.13547|I|GELua.|        0 bytes     0.00 ms   PhysicsPlugin
+ 14.13576|I|GELua.|        0 bytes     0.00 ms   ParentOnExit
+ 14.13613|I|GELua.|       64 bytes     0.00 ms   MainEventManager.find
+ 14.13638|I|GELua.|        0 bytes     0.01 ms   MainEventManager.onExit
+ 14.13662|I|GELua.|    19316 bytes     1.67 ms   savePostFx
+ 14.13690|I|GELua.|    56956 bytes     1.95 ms   settings
+ 14.13728|D|engine::DirectInputDevice::unacquire| Succesfully unacquired directinput device mouse0
+ 14.13738|D|engine::DirectInputDevice::unacquire| Succesfully unacquired directinput device keyboard0
+ 14.46511|D|engine::HtmlGuiTexture::~HtmlGuiTexture| MainGEUI | Texture destroyed
+ 14.59326|D|engine::DiscordIntegration::shutdown| Discord shutting down ...
+ 14.64507|I|engine::MainLoop::shutdown| This part of shutdown procedure took 0.53 seconds. These are the sub-stages that took more than 10ms to shutdown: LUA.onExit:17.59ms, ModuleManager.shutdown.GameEngineLua:25.79ms, ModuleManager.shutdown.SFXModule:294.2ms, ModuleManager.shutdown.Sim:16.12ms, ModuleManager.shutdown.ModuleCEF:117.5ms, ModuleManager.shutdown.BBEF_SHUT:GFXModule:16.31ms, ModuleManager.shutdown.BBEF_SHUT:MaterialManagerModule:25.71ms
