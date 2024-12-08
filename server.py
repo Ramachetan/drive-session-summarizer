@@ -189,4 +189,4 @@ def multiturn_generate_content(chat_message: ChatMessage):
         return {"response": "Application was restarted. Please run the simulation again. Thank you for your patience.😊"}
     
 
-# To run the server, execute the following command: uvicorn api:app --reload
+# To run the server, execute the following command: uvicorn server:app --reload

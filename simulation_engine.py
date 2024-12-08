@@ -9,14 +9,14 @@ import os
 import time
 import random
 
-beamng = BeamNGpy('localhost', 51394, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
+beamng = BeamNGpy('localhost', 60152, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
 
 def game(player_id):
     time.sleep(5)
     
     beamng.open()
     scenario = Scenario('automation_test_track', 'Driving Analysis - Google Cloud Event')
-    vehicle = Vehicle('Vehicle', model='pickup', license=player_id, color='Blue')
+    vehicle = Vehicle('Vehicle', model='etk800', license=player_id, color='Blue')
     # imu_sensor = IMU(pos=(0.73, 0.51, 0.8), debug=True)
     electrics_sensor = Electrics()
     damage_sensor = Damage()
