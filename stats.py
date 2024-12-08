@@ -21,6 +21,10 @@ def compute_part_damage(data):
     last_part_damage = literal_eval(data['part_damage'].iloc[-1])
     return last_part_damage
 
+def dtc_codes(data):
+    dtc_codes = data['DTC'].iloc[0]
+    return str(dtc_codes)
+
 def aggregate_statistics(data):
     total_time_secs = data['Time'].iloc[-1]
     accX_stats, accY_stats, accZ_stats = data['accXSmooth'].mean(), data['accYSmooth'].mean(), data['accZSmooth'].mean()

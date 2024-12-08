@@ -6,20 +6,22 @@ from beamngpy.sensors import IMU, Electrics, Damage
 from google.cloud import bigquery
 import json
 import os
+import time
 import random
 
-beamng = BeamNGpy('localhost', 64256, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
+beamng = BeamNGpy('localhost', 51394, home='D:/SteamLibrary/steamapps/common/BeamNG.drive', user='D:/miracle/code/game/user')
 
 def game(player_id):
+    time.sleep(5)
     
     beamng.open()
-    scenario = Scenario('automation_test_track', 'Driving Analysis - Ford Motors')
-    vehicle = Vehicle('Vehicle', model='covet', license=player_id, color='Green')
-    imu_sensor = IMU(pos=(0.73, 0.51, 0.8), debug=True)
+    scenario = Scenario('automation_test_track', 'Driving Analysis - Google Cloud Event')
+    vehicle = Vehicle('Vehicle', model='pickup', license=player_id, color='Blue')
+    # imu_sensor = IMU(pos=(0.73, 0.51, 0.8), debug=True)
     electrics_sensor = Electrics()
     damage_sensor = Damage()
 
-    vehicle.sensors.attach('imu_sensor', imu_sensor)
+    # vehicle.sensors.attach('imu_sensor', imu_sensor)
     vehicle.sensors.attach('electrics_sensor', electrics_sensor)
     vehicle.sensors.attach('damage_sensor', damage_sensor)
 
@@ -63,27 +65,27 @@ def game(player_id):
     beamng.close()
     df = pd.DataFrame(data, columns=column_names)
     df.to_csv(f'telematics/{player_id}_vehicle_data.csv', index=False)
-    upload_to_bigquery(f'telematics/{player_id}_vehicle_data.csv', player_id)
+    # upload_to_bigquery(f'telematics/{player_id}_vehicle_data.csv', player_id)
     print(f"Data saved for player {player_id}")
     print(df.head())
 
-def upload_to_bigquery(csv_file_path, table_id):
-    client = bigquery.Client()
-    table_id_full = f"fresh-span-400217.simulated_vehicle_data.{table_id}"
+# def upload_to_bigquery(csv_file_path, table_id):
+#     client = bigquery.Client()
+#     table_id_full = f"fresh-span-400217.simulated_vehicle_data.{table_id}"
 
-    job_config = bigquery.LoadJobConfig(
-        source_format=bigquery.SourceFormat.CSV,
-        skip_leading_rows=1,  
-        autodetect=True, 
-    )
+#     job_config = bigquery.LoadJobConfig(
+#         source_format=bigquery.SourceFormat.CSV,
+#         skip_leading_rows=1,  
+#         autodetect=True, 
+#     )
 
-    with open(csv_file_path, "rb") as source_file:
-        load_job = client.load_table_from_file(source_file, table_id_full, job_config=job_config)
+#     with open(csv_file_path, "rb") as source_file:
+#         load_job = client.load_table_from_file(source_file, table_id_full, job_config=job_config)
 
-    load_job.result()  
+#     load_job.result()  
 
-    destination_table = client.get_table(table_id_full)
-    print(f"Loaded {destination_table.num_rows} rows into {table_id_full}.")
+#     destination_table = client.get_table(table_id_full)
+#     print(f"Loaded {destination_table.num_rows} rows into {table_id_full}.")
     
 def generate_engine_dtc_codes(num_codes=5):
 
