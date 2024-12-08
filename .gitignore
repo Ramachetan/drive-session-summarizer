@@ -5,3 +5,4 @@ telematics
 .vscode
 __pycache__
 index
+test.py

@@ -3,8 +3,8 @@ from typing import Dict
 import pandas as pd
 from ast import literal_eval
 import vertexai
-from app import game
-from stats import aggregate_statistics
+from simulation_engine import game
+from vehicle_statistics import aggregate_statistics
 from vertexai.preview.generative_models import GenerativeModel
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -12,7 +12,7 @@ from ast import literal_eval
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from fastapi import FastAPI, Request
-from stats import load_vehicle_data, aggregate_statistics, dtc_codes
+from vehicle_statistics import load_vehicle_data, aggregate_statistics, dtc_codes
 
 app = FastAPI()
 
