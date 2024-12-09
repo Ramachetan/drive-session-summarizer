@@ -1,0 +1,13 @@
+app==0.0.1
+beamngpy==1.28
+fastapi==0.115.6
+google_cloud_aiplatform==1.68.0
+numpy==2.2.0
+pandas==1.4.3
+plotly==5.14.1
+protobuf==5.29.1
+pydantic==1.10.13
+Requests==2.32.3
+seaborn==0.11.2
+streamlit==1.31.1
+vertexai==0.0.1
