@@ -18,5 +18,3 @@ def multiturn_generate_content(prompt, dtc_response, dtc_codes):
     response = chat.send_message(f"""{prompt}""", generation_config=config, stream=False)
 
     return response.text
-
-
